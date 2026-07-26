@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "corporate-credit-rating-benchmark"
+version = "0.1.0"
+description = "Leakage-aware classification benchmark for historical corporate credit ratings."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "matplotlib==3.10.3",
+  "pandas==2.2.3",
+  "scikit-learn==1.8.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

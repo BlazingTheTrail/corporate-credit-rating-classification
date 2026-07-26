@@ -1,0 +1,73 @@
+{
+  "rows": 7805,
+  "columns": 28,
+  "date_range": {
+    "start": "2010-04-06",
+    "end": "2016-12-27"
+  },
+  "issuers": {
+    "unique_cik": 686,
+    "unique_ticker": 678,
+    "repeated_cik": 622
+  },
+  "ratings": {
+    "original_classes": 23,
+    "seven_band_classes": 7,
+    "binary_classes": 2,
+    "original_distribution": {
+      "BBB": 910,
+      "BBB+": 846,
+      "A": 836,
+      "A-": 722,
+      "BBB-": 705,
+      "BB+": 545,
+      "A+": 478,
+      "BB": 453,
+      "BB-": 427,
+      "B+": 422,
+      "B": 310,
+      "B-": 288,
+      "AA-": 254,
+      "AA": 185,
+      "CCC+": 151,
+      "AAA": 90,
+      "AA+": 73,
+      "CCC": 65,
+      "CC": 18,
+      "C": 11,
+      "CCC-": 10,
+      "D": 5,
+      "CC+": 1
+    },
+    "seven_band_distribution": {
+      "BBB": 2461,
+      "A": 2036,
+      "BB": 1425,
+      "B": 1020,
+      "AA": 512,
+      "CCC_or_lower": 261,
+      "AAA": 90
+    },
+    "binary_distribution": {
+      "investment_grade": 5099,
+      "speculative_grade": 2706
+    }
+  },
+  "leakage_controls": {
+    "source_binary_matches_derived_target_rows": 7805,
+    "source_binary_total_rows": 7805,
+    "source_binary_excluded_from_features": true,
+    "issuer_identifiers_excluded_from_features": true
+  },
+  "label_ambiguity": {
+    "predictor_vectors_with_multiple_ratings": 850,
+    "rows_in_ambiguous_predictor_groups": 2612
+  },
+  "temporal_holdout": {
+    "development_rows_2010_2015": 6830,
+    "test_rows_2016": 975,
+    "test_issuers": 466,
+    "test_issuers_seen_in_development": 430,
+    "test_issuers_unseen_in_development": 36
+  }
+}

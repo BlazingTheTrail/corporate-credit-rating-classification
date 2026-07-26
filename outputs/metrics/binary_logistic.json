@@ -1,0 +1,94 @@
+{
+  "accuracy": 0.7774358974358975,
+  "balanced_accuracy": 0.7876445160630243,
+  "macro_f1": 0.7774358974358975,
+  "weighted_f1": 0.7774358974358975,
+  "speculative_precision": 0.6979742173112339,
+  "speculative_recall": 0.8773148148148148,
+  "speculative_f1": 0.7774358974358975,
+  "roc_auc": 0.8804715742445945,
+  "average_precision": 0.8356236502676496,
+  "classification_report": {
+    "investment_grade": {
+      "precision": 0.8773148148148148,
+      "recall": 0.6979742173112339,
+      "f1-score": 0.7774358974358975,
+      "support": 543.0
+    },
+    "speculative_grade": {
+      "precision": 0.6979742173112339,
+      "recall": 0.8773148148148148,
+      "f1-score": 0.7774358974358975,
+      "support": 432.0
+    },
+    "accuracy": 0.7774358974358975,
+    "macro avg": {
+      "precision": 0.7876445160630243,
+      "recall": 0.7876445160630243,
+      "f1-score": 0.7774358974358975,
+      "support": 975.0
+    },
+    "weighted avg": {
+      "precision": 0.7978531346901512,
+      "recall": 0.7774358974358975,
+      "f1-score": 0.7774358974358975,
+      "support": 975.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      379,
+      164
+    ],
+    [
+      53,
+      379
+    ]
+  ],
+  "labels": [
+    "investment_grade",
+    "speculative_grade"
+  ],
+  "task": "binary",
+  "model": "logistic",
+  "model_selection": {
+    "dummy": {
+      "accuracy": 0.6852570320077594,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.40661870503597125
+    },
+    "logistic": {
+      "accuracy": 0.8123181377303589,
+      "balanced_accuracy": 0.8043225082521207,
+      "macro_f1": 0.7909676932640011
+    },
+    "random_forest": {
+      "accuracy": 0.8001939864209505,
+      "balanced_accuracy": 0.7758978100120278,
+      "macro_f1": 0.7717420859462742
+    },
+    "selection": {
+      "metric": "balanced_accuracy",
+      "selected_model": "logistic"
+    }
+  },
+  "split": {
+    "development_years": [
+      2010,
+      2015
+    ],
+    "test_year": 2016,
+    "development_rows": 6830,
+    "test_rows": 975,
+    "development_issuers": 650,
+    "test_issuers": 466
+  },
+  "unseen_issuer_group_cv": {
+    "accuracy_mean": 0.704398581470692,
+    "accuracy_std": 0.03483830635550396,
+    "balanced_accuracy_mean": 0.7035372207264418,
+    "balanced_accuracy_std": 0.040073718087449306,
+    "macro_f1_mean": 0.6864496357732282,
+    "macro_f1_std": 0.037177326046555235
+  }
+}
