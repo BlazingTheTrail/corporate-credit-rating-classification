@@ -1,209 +1,105 @@
-# Corporate Credit Rating Classification
+# Data Analytics & Risk Portfolio
 
-![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-1.8-F7931E?logo=scikitlearn&logoColor=white)
-![Tests](https://img.shields.io/badge/tests-8%20passing-brightgreen)
-![Status](https://img.shields.io/badge/status-active-success)
+I am Xiang Ding, a Toronto-based data analyst with experience across credit risk, predictive modelling, data quality, business intelligence, and decision-support analytics.
 
-A leakage-aware classification benchmark built from historical public corporate
-ratings and financial ratios. The project is being rebuilt from an exploratory
-classroom notebook into a reproducible portfolio project with explicit target
-definitions, chronological validation, issuer-grouped validation, automated
-tests, and honest limitations.
+My work spans two complementary areas:
 
-## Project objective
+- **Public, reproducible projects** that demonstrate end-to-end Python, SQL, machine-learning, testing, and documentation practices.
+- **Client engagements** presented as anonymized case studies because the underlying data, code, and business context are confidential.
 
-The project answers two related questions:
+## Featured Public Projects
 
-1. **Primary task:** classify an issuer rating as investment grade or
-   speculative grade.
-2. **Extension task:** classify the rating into seven ordered bands: AAA, AA,
-   A, BBB, BB, B, and CCC-or-lower.
+### Toronto Condo Rental Analysis
 
-The original 23-grade target is not used as the headline benchmark because
-several notches have too few observations for credible out-of-sample
-evaluation.
+An end-to-end Python project that collects rendered Toronto condo rental listings, validates and cleans the records, and produces a reproducible market analysis.
 
-## Why this rebuild matters
+**Skills demonstrated:** Python, web scraping, data cleaning, quality controls, exploratory analysis, automated testing, and technical documentation.
 
-The earlier notebook randomly split repeated issuer observations and included
-`Binary Rating` as a predictor of `Rating`. Because `Binary Rating` is derived
-from the target, that design leaked the answer into the model. This version:
+**Selected result:** A controlled ten-page collection produced 492 unique listings and 490 analysis-ready records.
 
-- constructs targets from `Rating` but never exposes either target to the model;
-- excludes issuer identifiers, ticker symbols, corporation names, and dates
-  from the feature matrix;
-- evaluates a future 2016 holdout after training on 2010–2015 observations;
-- separately reports issuer-grouped cross-validation to test performance on
-  unseen companies;
-- fits imputation, encoding, and scaling only inside each training pipeline;
-- emphasizes balanced accuracy, macro-F1, speculative-grade recall, and
-  ordinal error rather than accuracy alone.
+[View the dedicated repository](https://github.com/BlazingTheTrail/toronto-condo-rental-analysis)
 
-## Data
+### Corporate Credit Rating Classification
 
-Source: [Corporate Credit Rating With Financial Ratios](https://www.kaggle.com/datasets/kirtandelwadia/corporate-credit-rating-with-financial-ratios)
-by Kirtan Delwadia, licensed under CC BY 4.0.
+A leakage-aware benchmark using public financial-ratio data to compare binary and seven-band corporate credit-rating classification tasks.
 
-The dataset contains 7,805 historical rating observations from 2010–2016,
-multiple rating agencies, sector and SIC metadata, and 16 financial ratios.
-The raw CSV is not committed to this repository.
+**Skills demonstrated:** Python, pandas, scikit-learn, classification modelling, temporal validation, model evaluation, automated testing, and reproducible project structure.
 
-```bash
-python scripts/download_data.py
-```
+**Selected result:** The binary benchmark achieved balanced accuracy of approximately 0.79 and macro F1 of approximately 0.78. The more difficult seven-band benchmark is reported separately to avoid overstating model performance.
 
-See [`data/README.md`](data/README.md) for details.
+[View the dedicated repository](https://github.com/BlazingTheTrail/corporate-credit-rating-classification)
 
-## Target definitions
+## Selected Client Work — Anonymized
 
-### Binary task
+The following engagements are described at a high level. Client names, source data, production code, credentials, system identifiers, and commercially sensitive metrics are not published.
 
-- **Investment grade:** AAA through BBB-
-- **Speculative grade:** BB+ through D
+### Loan Approval Proof of Concept
 
-The source `Binary Rating` column is retained only for audit comparison and is
-never used as a model input.
+Developed and evaluated a proof-of-concept classification workflow using historical application and transaction information. The work focused on reducing costly decision errors while supporting a reviewable model-development process.
 
-### Seven-band task
+**Skills demonstrated:** SQL, Python, feature engineering, classification modelling, validation, business-metric alignment, API-oriented delivery, and containerization.
 
-| Target band | Source ratings |
+*Confidential engagement — methodology and responsibilities are summarized without client data or source code.*
+
+### Website Traffic & Marketing Campaign Analytics
+
+Designed an analytics workflow that moved website and campaign data into a queryable environment and supported stakeholder-facing dashboards for acquisition and marketing-performance analysis.
+
+**Skills demonstrated:** Airbyte, PostgreSQL, SQL, GA4, Metabase, data-quality assessment, KPI design, dashboard development, and stakeholder communication.
+
+[Read the anonymized case study](case-studies/website-marketing-analytics.md)
+
+### Training Assessment Analytics
+
+Analyzed assessment and participation data to support program-level reporting and identify patterns relevant to training outcomes.
+
+**Skills demonstrated:** Python, pandas, exploratory analysis, data validation, visualization, and business reporting.
+
+*Confidential engagement — only anonymized responsibilities and transferable methods are presented.*
+
+## Additional Public Visualization Work
+
+### Criminal Cases in Los Angeles
+
+A descriptive Tableau dashboard examining 2010 Los Angeles crime records across time, location, offense category, and victim attributes.
+
+**Skills demonstrated:** MySQL, SQL, DataGrip, Tableau, data preparation, and dashboard design.
+
+[View the Tableau dashboard](https://public.tableau.com/app/profile/xiang.ding/viz/Crime2010LA/DashboardCrimeinLosAngeles) · [Read the project note](case-studies/los-angeles-crime-dashboard.md)
+
+### Global Financial Markets
+
+A Tableau dashboard presenting selected movements across foreign-exchange, equity, bond, commodity, and interbank markets.
+
+**Skills demonstrated:** MySQL, SQL, DataGrip, financial-market analysis, and Tableau.
+
+[View the Tableau dashboard](https://public.tableau.com/app/profile/xiang.ding/viz/GlobalFinancialMarkets/DashboardforGlobalFinancialMarket)
+
+## Skills Evidence
+
+| Capability | Evidence |
 |---|---|
-| AAA | AAA |
-| AA | AA+, AA, AA- |
-| A | A+, A, A- |
-| BBB | BBB+, BBB, BBB- |
-| BB | BB+, BB, BB- |
-| B | B+, B, B- |
-| CCC-or-lower | CCC+, CCC, CCC-, CC+, CC, C, D |
+| Python and pandas | Toronto rental analysis; credit-rating benchmark; anonymized client analyses |
+| SQL and relational data | Marketing analytics; loan POC; Tableau projects |
+| Machine learning | Credit-rating classification; loan approval POC |
+| Data quality and validation | Toronto cleaning pipeline; credit-rating audit; marketing analytics |
+| BI and visualization | Metabase; Tableau; Matplotlib and Seaborn |
+| Reproducibility and testing | Dedicated public repositories with structured source code, tests, documentation, and versioned outputs |
+| Credit and financial risk | Corporate credit-rating benchmark; loan approval POC; financial-markets reporting |
 
-## Validation design
+## Confidentiality Approach
 
-Two complementary protocols are reported:
+Client work is deliberately presented without:
 
-1. **Chronological holdout:** development data from 2010–2015 and untouched
-   test data from 2016.
-2. **Unseen-issuer validation:** five-fold `StratifiedGroupKFold`, grouped by
-   CIK, on the development period.
+- client names, logos, domains, or system identifiers;
+- row-level records or proprietary datasets;
+- production source code, credentials, or infrastructure configuration;
+- exact commercial metrics that could identify the organization.
 
-The chronological test estimates forward performance. The grouped protocol
-tests whether the model generalizes beyond issuers represented in training.
+Where useful, architecture diagrams, synthetic examples, generalized KPI definitions, and anonymized screenshots may be provided instead.
 
-## Repository structure
+## Contact
 
-```text
-.
-├── data/
-│   ├── README.md
-│   ├── raw/
-│   └── processed/
-├── outputs/
-│   ├── charts/
-│   └── metrics/
-├── docs/
-│   ├── data_dictionary.md
-│   └── model_card.md
-├── notebooks/
-│   └── 01_credit_rating_benchmark.ipynb
-├── scripts/
-│   ├── audit_data.py
-│   ├── download_data.py
-│   └── train.py
-├── src/credit_rating/
-│   ├── audit.py
-│   ├── data.py
-│   ├── evaluation.py
-│   └── modeling.py
-├── tests/
-├── pyproject.toml
-└── requirements.txt
-```
+- Email: [dingxiangonline@gmail.com](mailto:dingxiangonline@gmail.com)
+- GitHub: [BlazingTheTrail](https://github.com/BlazingTheTrail)
 
-## Run locally
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e ".[dev]"
-
-python scripts/download_data.py
-python -m pytest -q
-
-python scripts/audit_data.py
-python scripts/train.py --task all --model auto
-```
-
-Metrics are written to `outputs/metrics/`; confusion matrices are written to
-`outputs/charts/`. Automatic model selection uses only the 2015 validation
-partition; the 2016 holdout is evaluated after selection.
-
-## Current models
-
-- Class-weighted multinomial/binary logistic regression as a transparent
-  baseline
-- Class-weighted random forest as a nonlinear comparison
-
-Model selection is based on validation evidence, not model complexity.
-
-Detailed governance and use constraints are documented in the
-[`model card`](docs/model_card.md). Field definitions and exclusions are
-documented in the [`data dictionary`](docs/data_dictionary.md).
-The concise [`analysis notebook`](notebooks/01_credit_rating_benchmark.ipynb)
-provides a recruiter-friendly walkthrough without duplicating production logic.
-
-## Verified benchmark results
-
-The following results were generated from the documented public dataset. Model
-selection used 2015 only; the listed holdout metrics are from 2016.
-
-| Task | Selected model | 2016 balanced accuracy | 2016 macro-F1 |
-|---|---:|---:|---:|
-| Investment grade vs. speculative grade | Logistic regression | 0.788 | 0.777 |
-| Seven ordered rating bands | Random forest | 0.451 | 0.405 |
-
-For the binary task, speculative-grade recall is **0.877**, ROC-AUC is
-**0.881**, and average precision is **0.836**. On issuer-grouped
-cross-validation, balanced accuracy is **0.704 ± 0.040**, which is lower than
-the chronological result and provides a more cautious estimate for unseen
-companies.
-
-For the seven-band extension, the 2016 ordinal mean absolute error is
-**0.830 bands**, and **82.8%** of predictions fall within one broad rating band
-of the observed label. Issuer-grouped macro-F1 is **0.353 ± 0.047**, confirming
-that fine-grained rating prediction remains the more difficult and less stable
-task.
-
-### Rating distribution
-
-![Seven-band rating distribution](outputs/charts/seven_band_distribution.png)
-
-### Primary-task holdout matrix
-
-![Binary holdout confusion matrix](outputs/charts/binary_logistic_confusion_matrix.png)
-
-### Seven-band holdout matrix
-
-![Seven-band holdout confusion matrix](outputs/charts/seven_band_random_forest_confusion_matrix.png)
-
-## Limitations
-
-- The observations are historical (2010–2016) and should not be presented as
-  current market evidence.
-- Public financial ratios omit qualitative, structural, macroeconomic, and
-  forward-looking information used in professional credit analysis.
-- Rating agencies may apply different scales and methodologies; the source
-  data does not fully document harmonization.
-- Multiple ratings can share the same financial vector, so the target contains
-  irreducible disagreement not explained by available predictors.
-- The work is an educational public-data benchmark, not a production rating
-  system and not investment advice.
-
-## Next steps
-
-- Add probability calibration and threshold analysis for the binary model.
-- Investigate agency-aware and sector-aware error patterns.
-- Add time-aware feature engineering without exposing rating dates to the
-  estimator.
-- Automate data retrieval, testing, and benchmark regeneration in CI while
-  keeping the raw licensed dataset out of version control.
